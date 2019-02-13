@@ -1,5 +1,11 @@
 <template>
     <div>
+        <pre>
+            这个页面主要展示了三个问题:
+            1. countup 调用
+            2. 父组件直接调用子组建方法
+            3. ref的两种用法
+        </pre>
         <count-to :end-val="endVal" ref="counter" @on-animation-end="end">
             <span slot="prepend">总金额： </span>
             <span slot="append">元</span>>
