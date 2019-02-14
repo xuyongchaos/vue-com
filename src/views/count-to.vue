@@ -10,6 +10,8 @@
             <span slot="prepend">总金额： </span>
             <span slot="append">元</span>>
         </count-to>
+        <p> 当前值： {{curVal}}</p>
+        <p> 动画结束提示： {{animationEndHint}}</p>
         <button @click="getCurVal">得到当前值</button>
         <button @click="upVal">更新当前值</button>
     </div>
@@ -24,7 +26,9 @@ export default {
     },
     data () {
         return {
-            endVal: 1000
+            endVal: 1000,
+            curVal: 0,
+            animationEndHint: ''
         }
     },
     methods: {
@@ -34,14 +38,14 @@ export default {
              * 1.封装的组建上面使用ref， 获得的vue 实例
              * 2.原生的html 标签上面使用ref ,获得的是元素dom
              */
-            let num = this.$refs.counter.getCount()
-            console.log(num)
+            this.curVal= this.$refs.counter.getCount()
         },
-        end (val) {
-            console.log('动画结束了')
+        end () {
+            this.animationEndHint = '动画结束了'
         },
         upVal () {
-            this.endVal += Math.random() * 100 
+            this.animationEndHint = 'loading...'
+            this.endVal += Math.random() * 100
         }
 
     }

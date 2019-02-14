@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    home page
+    home page aaa
+    <ul>
+      <li v-for="item in breadItems" :key="item" @click="changeRoute(item)" class="link">{{item}}</li>
+    </ul>
   </div>
 </template>
 
@@ -8,7 +11,28 @@
 
 export default {
   name: 'home',
-  components: {
-  }
+  data () {
+    return {
+      breadItems: [
+        'count-to'
+      ]
+    }
+  },
+  methods: {
+    changeRoute (name) {
+      this.$router.push({name})
+    }
+  },
 }
 </script>
+<style lang="less">
+.link{
+  text-decoration-style: wavy;
+  text-decoration-line: underline;
+  text-decoration-color: yellow;
+  &:hover{
+    color: blue;
+    cursor: pointer;
+  }
+}
+</style>
