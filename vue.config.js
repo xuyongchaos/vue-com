@@ -11,5 +11,6 @@ module.exports = {
       .set('@', resolve('./src'))
       .set('components', resolve('./src/components'))
       .set('views', resolve('./src/views'))
+      .set('stykes', resolve('./src/assets/styles'))
   }
 }

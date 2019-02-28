@@ -15,7 +15,8 @@ export default {
     return {
       breadItems: [
         'count-to',
-        'split-pane'
+        'split-pane',
+        'grid'
       ]
     }
   },

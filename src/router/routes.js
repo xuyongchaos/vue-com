@@ -15,5 +15,11 @@ export default [
       path: '/split-pane',
       name: 'split-pane',
       component: () => import('views/split-pane.vue')
-  }
+    },
+    {
+        path: '/grid',
+        name: 'grid',
+        component: () => import('views/grid.vue')
+    },
+
 ]
