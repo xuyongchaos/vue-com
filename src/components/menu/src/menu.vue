@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Emitter from "../../mixins/emitter.js";
+import Emitter from "@/mixins/emitter";
 export default {
   name: "Menu",
   mixins: [Emitter],

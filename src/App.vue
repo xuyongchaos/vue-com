@@ -8,26 +8,27 @@
 </template>
 
 <script>
-export default{
+export default {
   methods: {
     goHome() {
-      this.$router.push({name: 'home'})
+      this.$router.push({ name: "home" });
     }
   }
-}
+};
 </script>
 
 <style lang="less">
-.content{
+.content {
   padding: 5px;
-  background: #dfdfdf;
+  border: solid 1px #999;
+  border-radius: 5px;
   min-height: 500px;
 }
-.home-btn{
+.home-btn {
   padding: 8px 14px;
   border-radius: 5px;
   float: right;
-  &:hover{
+  &:hover {
     background: #dfdfdf;
     color: blue;
     cursor: pointer;

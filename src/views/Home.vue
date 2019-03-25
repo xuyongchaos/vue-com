@@ -16,7 +16,11 @@ export default {
       breadItems: [
         'count-to',
         'split-pane',
-        'grid'
+        'grid',
+        'graph',
+        'loading',
+        'modal',
+        'button'
       ]
     }
   },

@@ -6,7 +6,6 @@
       size ? `is-${size}`: '',
       {
         'is-fullwidth': long,
-        'is-outlined': outlined,
         'is-rounded' : round,
         'is-loading': loading
       }
@@ -21,21 +20,29 @@
 </template>
 
 <script>
-import { oneOf } from '@/utils/help'
+import { oneOf } from "@/utils/help";
 export default {
-  componentName: 'nevis-button',
+  componentName: "nevis-button",
   props: {
     type: {
       type: String,
-      default: 'default',
-      validator: function (key) {
-        return oneOf(key, ['default', 'primary', 'success', 'warning', 'danger', 'info', 'link'])
+      default: "default",
+      validator: function(key) {
+        return oneOf(key, [
+          "default",
+          "primary",
+          "success",
+          "warning",
+          "error",
+          "info",
+          "link"
+        ]);
       }
     },
     size: {
       type: String,
-      validator: function (key) {
-        return oneOf(key, ['small', 'medium', 'large'])
+      validator: function(key) {
+        return oneOf(key, ["small", "medium", "large"]);
       }
     },
     loading: {
@@ -47,31 +54,70 @@ export default {
       type: Boolean,
       default: false
     },
-    outlined: {
-      type: Boolean,
-      default: false
-    },
     round: {
       type: Boolean,
       default: false
     },
     icon: {
       type: String,
-      default: ''
+      default: ""
     }
   },
-  data () {
-    return {
-    }
+  data() {
+    return {};
   },
-  computed: {
-  },
+  computed: {},
   methods: {
-    handleClick () {
-      this.$emit('click')
+    handleClick() {
+      this.$emit("click");
     }
   }
-}
+};
 </script>
-<style scoped>
+<style scoped lang="less">
+@import "~@/assets/style/common.less";
+
+.button {
+  padding: 5px 10px;
+  border: none;
+  box-sizing: border-box;
+  opacity: 1;
+  &:active,&:focus{
+    outline: none;
+  }
+  &:hover{
+    opacity: .85;
+    cursor: pointer;
+  }
+}
+.is-default{
+  background: @default-color;
+  border: solid 1px #dfdfdf;
+}
+.is-primary{
+  background: @primary-color;
+}
+.is-info{
+  background: @info-color;
+}
+.is-success{
+  background: @success-color;
+}
+.is-warning{
+  background: @warning-color;
+}
+.is-error{
+  background: @error-color;
+}
+.is-link{
+  border: solid 1px #dfdfdf;
+  color: @primary-color;
+}
+.is-fullwidth{
+  display: block;
+}
+
+.is-rounded {
+  border-radius: 100%;
+}
 </style>

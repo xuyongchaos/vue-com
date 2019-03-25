@@ -21,5 +21,25 @@ export default [
         name: 'grid',
         component: () => import('views/grid.vue')
     },
+    {
+      path: '/graph',
+      name: 'graph',
+      component: () => import('views/graph.vue')
+    },
+    {
+      path: '/loading',
+      name: 'loading',
+      component: () => import('views/loading.vue')
+    },
+    {
+      path: '/modal',
+      name: 'modal',
+      component: () => import('views/modal.vue')
+    },
+    {
+      path: '/button',
+      name: 'button',
+      component: () => import('views/button.vue')
+    },
 
 ]
